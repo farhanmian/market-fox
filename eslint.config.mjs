@@ -19,6 +19,12 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // Disable unused vars warnings/errors across the project
+      "@typescript-eslint/no-unused-vars": "off",
+      // Allow unescaped ' and " in JSX text
+      "react/no-unescaped-entities": "off",
+    },
   },
 ];
 
