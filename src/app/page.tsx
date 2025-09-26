@@ -301,82 +301,69 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Work Done (Portfolio) Section */}
       <section className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Trusted by Industry Leaders
+                Work Done
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              See what our customers are saying about their transformation
-              journey
+              A snapshot of products and projects we’ve delivered across
+              fintech, e‑commerce, and SaaS — from MVPs to enterprise-grade
+              platforms.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                quote:
-                  "Market Fox transformed our entire workflow. We've seen a 300% increase in productivity and our team couldn't be happier.",
-                author: "Sarah Chen",
-                role: "CTO",
-                company: "TechFlow Inc.",
-                avatar: "👩‍💼",
-                rating: 5,
+                title: "NovaPay Mobile Wallet",
+                client: "Fintech | Confidential",
+                summary:
+                  "Designed and built a secure mobile wallet with KYC, P2P transfers, bill payments, and card tokenization.",
+                impact: "Launched to 120k users in 90 days with 99.95% uptime.",
+                icon: "💳",
               },
               {
-                quote:
-                  "The AI insights are incredible. We're making data-driven decisions faster than ever before.",
-                author: "Marcus Rodriguez",
-                role: "Head of Operations",
-                company: "DataCorp",
-                avatar: "👨‍💻",
-                rating: 5,
+                title: "Atlas Commerce Platform",
+                client: "E‑commerce | Atlas Retail",
+                summary:
+                  "Headless storefront with real‑time inventory, search, and personalized recommendations powered by our AI analytics.",
+                impact:
+                  "+38% conversion rate and 22% AOV uplift within first quarter.",
+                icon: "🛒",
               },
               {
-                quote:
-                  "Implementation was seamless and the ROI was visible within the first month. Absolutely recommend it!",
-                author: "Emily Watson",
-                role: "VP of Growth",
-                company: "ScaleUp",
-                avatar: "👩‍🚀",
-                rating: 5,
+                title: "Helix Analytics Cloud",
+                client: "SaaS | Helix Labs",
+                summary:
+                  "Multi‑tenant analytics SaaS with role-based access, custom dashboards, and automated anomaly detection.",
+                impact:
+                  "Reduced reporting time by 70% and replaced 5 legacy tools.",
+                icon: "📊",
               },
-            ].map((testimonial, index) => (
+            ].map((project, index) => (
               <div
                 key={index}
                 className="group p-8 rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/10"
               >
-                {/* Stars */}
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-yellow-400 fill-current"
-                    />
-                  ))}
+                <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl">{project.icon}</span>
                 </div>
 
-                <blockquote className="text-gray-300 mb-6 leading-relaxed text-lg">
-                  "{testimonial.quote}"
-                </blockquote>
-
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
-                    <span className="text-xl">{testimonial.avatar}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-white group-hover:text-purple-300 transition-colors">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {testimonial.role} at {testimonial.company}
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-semibold mb-2 group-hover:text-purple-300 transition-colors">
+                  {project.title}
+                </h3>
+                <div className="text-gray-400 text-sm mb-4">
+                  {project.client}
                 </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  {project.summary}
+                </p>
+                <div className="text-gray-400 text-sm">{project.impact}</div>
               </div>
             ))}
           </div>
