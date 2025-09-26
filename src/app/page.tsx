@@ -12,6 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import Image from "next/image";
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,11 +58,12 @@ const LandingPage = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 backdrop-blur-sm bg-gray-900/90 border-b border-gray-800/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+          <div className="flex items-center">
+            {/* <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
               <Zap className="w-5 h-5" />
-            </div>
-            <span className="text-xl font-bold">NeoTech</span>
+            </div> */}
+            <Image src="/logo.png" alt="Market Fox" width={32} height={32} />
+            <span className="text-xl font-bold">Market Fox</span>
           </div>
 
           {/* Desktop Menu */}
@@ -318,7 +320,7 @@ const LandingPage = () => {
             {[
               {
                 quote:
-                  "NeoTech transformed our entire workflow. We've seen a 300% increase in productivity and our team couldn't be happier.",
+                  "Market Fox transformed our entire workflow. We've seen a 300% increase in productivity and our team couldn't be happier.",
                 author: "Sarah Chen",
                 role: "CTO",
                 company: "TechFlow Inc.",
@@ -391,7 +393,7 @@ const LandingPage = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of companies that trust NeoTech to power their
+              Join thousands of companies that trust Market Fox to power their
               digital transformation
             </p>
             <button className="group px-10 py-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl text-xl font-semibold hover:from-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 active:scale-95 hover:shadow-2xl hover:shadow-purple-500/25">
@@ -406,14 +408,15 @@ const LandingPage = () => {
       <footer className="relative z-10 py-16 px-6 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+            <div className="flex items-center mb-4 md:mb-0">
+              {/* <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold">NeoTech</span>
+              </div> */}
+              <Image src="/logo.png" alt="Market Fox" width={32} height={32} />
+              <span className="text-xl font-bold">Market Fox</span>
             </div>
             <div className="text-gray-400 text-center md:text-left">
-              © 2025 NeoTech. All rights reserved.
+              © 2025 Market Fox. All rights reserved.
             </div>
           </div>
         </div>
