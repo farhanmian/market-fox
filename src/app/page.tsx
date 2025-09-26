@@ -80,9 +80,9 @@ const LandingPage = () => {
           </div>
 
           <div className="hidden md:flex space-x-4">
-            <button className="px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-gray-800/50 rounded-lg">
+            {/* <button className="px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-gray-800/50 rounded-lg">
               Sign In
-            </button>
+            </button> */}
             <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-purple-500/25">
               Get Started
             </button>
