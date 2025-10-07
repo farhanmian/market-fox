@@ -31,6 +31,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,21 +98,17 @@ const LandingPage = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {[
-              "About",
-              "Mission & Vision",
-              "Our services",
-              "Core Services",
-              "Contact",
-            ].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-              >
-                {item}
-              </a>
-            ))}
+            {["About", "Business Outcomes", "Our services", "Contact"].map(
+              (item) => (
+                <Link
+                  key={item}
+                  href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  {item}
+                </Link>
+              )
+            )}
           </div>
 
           <div className="hidden md:flex space-x-4">
@@ -215,8 +212,38 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                About MRKTFOX
+              </span>
+            </h2>
+            <div className="max-w-4xl mx-auto text-lg text-gray-300 leading-relaxed space-y-6">
+              <p>
+                MRKTFOX is a young startup founded by four friends passionate
+                about technology and innovation. We combine technical expertise
+                with business insight to create impactful solutions.
+              </p>
+              <p>
+                Our mission is to make analytics smarter, faster, and more
+                human-centered. We deliver intelligent solutions that fuel
+                growth across industries.
+              </p>
+              <p>
+                From insights to decision-making, MRKTFOX makes data work for
+                you. Beyond analytics, we provide end-to-end AI and digital
+                solutions to help businesses scale and stay future-ready.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="our-services" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -420,7 +447,7 @@ const LandingPage = () => {
       </section>
 
       {/* Outcomes Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="business-outcomes" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -476,7 +503,7 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="contact" className="relative z-10 py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="p-12 rounded-3xl bg-gradient-to-r from-purple-900/30 via-gray-800/30 to-blue-900/30 border border-gray-700/50 backdrop-blur-sm">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -534,12 +561,12 @@ const LandingPage = () => {
               <h4 className="text-lg font-semibold mb-4">Important Links</h4>
               <ul className="space-y-2 text-gray-300">
                 <li>
-                  <a className="hover:text-white" href="#">
+                  <a className="hover:text-white" href="#about">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a className="hover:text-white" href="#">
+                  <a className="hover:text-white" href="#contact">
                     Contact
                   </a>
                 </li>
