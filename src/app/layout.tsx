@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Market Fox",
-  description: "Market Fox",
+  title: "MRKTFOX",
+  description: "MRKTFOX",
 };
 
 export default function RootLayout({

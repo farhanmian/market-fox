@@ -89,35 +89,30 @@ const LandingPage = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 backdrop-blur-sm bg-gray-900/90 border-b border-gray-800/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            {/* <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-              <Zap className="w-5 h-5" />
-            </div> */}
-            <Image src="/logo.png" alt="Market Fox" width={32} height={32} />
-            <span className="text-xl font-bold">Market Fox</span>
+            {/* <Image src="/logo.png" alt="MRKTFOX" width={32} height={32} /> */}
+            <span className="text-xl font-bold">MRKTFOX</span>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {["About", "Business Outcomes", "Our services", "Contact"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </div>
-
-          <div className="hidden md:flex space-x-4">
-            {/* <button className="px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-gray-800/50 rounded-lg">
-              Sign In
-            </button> */}
-            {/* <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-purple-500/25">
-              Get Started
-            </button> */}
+            {["About", "Business Outcomes", "Our services"].map((item) => (
+              <Link
+                key={item}
+                href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                {item}
+              </Link>
+            ))}
+            <a
+              onClick={() => {
+                console.log("testing");
+                setIsContactOpen(true);
+              }}
+              className="text-gray-300 cursor-pointer hover:text-white transition-colors duration-200"
+            >
+              Contact
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -213,7 +208,7 @@ const LandingPage = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-24 px-6">
+      <section id="about" className="relative z-10 py-30 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -533,13 +528,8 @@ const LandingPage = () => {
             {/* Brand */}
             <div>
               <div className="flex items-center mb-4">
-                <Image
-                  src="/logo.png"
-                  alt="Market Fox"
-                  width={40}
-                  height={40}
-                />
-                <span className="ml-2 text-2xl font-bold">Market Fox</span>
+                {/* <Image src="/logo.png" alt="MRKTFOX" width={40} height={40} /> */}
+                <span className="ml-2 text-2xl font-bold">MRKTFOX</span>
               </div>
               <p className="text-gray-400 max-w-xs">
                 The Fox Behind Your Market Moves
@@ -561,27 +551,30 @@ const LandingPage = () => {
               <h4 className="text-lg font-semibold mb-4">Important Links</h4>
               <ul className="space-y-2 text-gray-300">
                 <li>
-                  <a className="hover:text-white" href="#about">
+                  <a className="hover:text-white cursor-pointer" href="#about">
                     About Us
                   </a>
                 </li>
-                <li>
-                  <a className="hover:text-white" href="#contact">
-                    Contact
-                  </a>
+                <li
+                  onClick={() => {
+                    console.log("testing");
+                    setIsContactOpen(true);
+                  }}
+                >
+                  <a className="hover:text-white cursor-pointer">Contact</a>
                 </li>
                 <li>
-                  <a className="hover:text-white" href="#">
+                  <a className="hover:text-white cursor-pointer" href="#">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a className="hover:text-white" href="#">
+                  <a className="hover:text-white cursor-pointer" href="#">
                     Terms & Conditions
                   </a>
                 </li>
                 <li>
-                  <a className="hover:text-white" href="#">
+                  <a className="hover:text-white cursor-pointer" href="#">
                     FAQs
                   </a>
                 </li>
